@@ -8,8 +8,8 @@
       <div v-else>
         <h1>Nuxt Data</h1>
         <ul>
-          <li v-for="item of items" :key="item.ID.N">
-            {{ item.name.S }}
+          <li v-for="item of items" :key="item.ID.S">
+            {{ item.ID.S }}
           </li>
         </ul>
         <button @click="$fetch">Refresh</button><br />
@@ -34,7 +34,9 @@ export default {
     }
   },
   async fetch() {
-    this.items = await fetch('/dev')
+    this.items = await fetch(
+      'https://xesfh77f2i.execute-api.us-east-2.amazonaws.com/dev'
+    )
       .then((res) => res.json())
       .then((res) => res.body.Items)
   },
