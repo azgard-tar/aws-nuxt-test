@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">aws-nuxt-test</h1>
+      <h1 class="title">aws-nuxt-test-abracadabra</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
