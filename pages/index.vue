@@ -3,14 +3,10 @@
     <div>
       <Logo />
       <h1 class="title">aws-nuxt-test-abracadabra</h1>
-      <NuxtLink to="/temp">Temp page</NuxtLink>
+      <NuxtLink to="/temp">Data page</NuxtLink>
     </div>
   </div>
 </template>
-
-<script>
-export default {}
-</script>
 
 <style>
 .container {

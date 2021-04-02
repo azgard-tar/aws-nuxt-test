@@ -35,10 +35,16 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
+  axios: {
+    proxy: true,
+  },
+  proxy: {
+    '/dev': 'https://xesfh77f2i.execute-api.us-east-2.amazonaws.com',
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
