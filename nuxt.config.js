@@ -1,7 +1,6 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
-  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -36,13 +35,15 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
   ],
+  env: {
+    apiUrl: 'https://xesfh77f2i.execute-api.us-east-2.amazonaws.com',
+  },
   axios: {
-    proxy: true,
+    baseURL: process.env.apiUrl,
   },
   proxy: {
-    '/dev': 'https://xesfh77f2i.execute-api.us-east-2.amazonaws.com',
+    '/dev': process.env.apiUrl,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

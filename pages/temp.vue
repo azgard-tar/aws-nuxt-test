@@ -34,19 +34,16 @@ export default {
     }
   },
   async fetch() {
-    this.items = await fetch(
-      'https://xesfh77f2i.execute-api.us-east-2.amazonaws.com/dev'
-    )
+    this.items = await fetch(`${process.env.apiUrl}/dev`)
       .then((res) => res.json())
       .then((res) => res.body.Items)
   },
   methods: {
     addItem() {
-      this.$axios
-        .$post('/dev', {
-          name: this.inputVal,
-        })
-        .then(() => this.$fetch())
+      fetch(`${process.env.apiUrl}/dev`, {
+        method: 'POST',
+        body: JSON.stringify({ name: this.inputVal }),
+      }).then(() => this.$fetch())
     },
   },
 }
